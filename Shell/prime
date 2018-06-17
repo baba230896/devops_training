@@ -1,0 +1,31 @@
+#!/bin/bash
+
+prime()
+{
+	mid=$(echo "$1/2" | bc)
+	i=2
+	f=1
+	while [ $i -le $mid ]
+	do
+		if [ $(echo "$1%$i" | bc) -eq 0 ]
+		then
+			echo "number is not prime"
+			f=0
+			break
+		fi
+		i=$((i+1))
+	done
+	if [ $f -eq 1 ]
+	then
+		echo "number is prime"
+	fi
+}
+
+
+if [ $# -eq 0 ]
+then
+	read -p "Enter a number " s
+	prime $s
+else
+	prime $1
+fi

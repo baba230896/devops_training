@@ -1,0 +1,15 @@
+#!/bin/bash
+
+square()
+{
+	echo "Area of Square $(($1*$1))"
+}
+
+
+if [ $# -eq 0 ]
+then
+	read -p "Enter a side length of Square " s
+	square $s
+else
+	square $1
+fi

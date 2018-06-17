@@ -1,0 +1,29 @@
+echo -e "\n\t\t\tWelcome to the Jackpot"
+echo -e "\n\t\t\tYou have 5 Chances to win jackpot"
+i=0
+while [ $i -lt 5 ]
+do
+	if [ $i -eq 4 ]
+	then
+		echo "This is yours last chance"
+		read -p "Enter a number (0000-9999) " number
+		if [ $number -eq 7777 ]
+		then
+			echo -e "\t\t\t\t----------------You win! Congratulations------------"
+		else
+			echo -e "\t\t\t\t----------------You Loose---------------------------"
+		fi
+	else
+		echo  "This is Yours $(($i+1)) Chances"
+		read -p "Enter a number (0000-9999) " number
+		if [ $number -eq 7777 ]
+		then
+					
+			echo -e "\n\t\t\t\t----------------You win! Congratulations------------"
+			break
+		else
+			echo -e "\t\t\t\t-----------Better luck next time--------------------\n"
+		fi
+	fi
+	i=$(($i+1))
+done

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter First Number 'A' " a
+read -p "Enter Second Number 'B' " b
+echo "Before swap A is $a and B is $b"
+a=$((a+b))
+b=$((a-b))
+a=$((a-b))
+echo "After swap A is $a and B is $b"

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+interest()
+{
+	if [ $# -eq 0 -o $# -gt 3 -o $# -lt 3 ]
+	then
+		echo "Pass all arguments rate amount time"
+		./simple_interest  #either you can use break
+	else
+		i=$(echo "scale=4;(($1*$2*$3)/100)" | bc)
+		echo "Your Simple Interest $i"
+	fi
+}
+
+
+if [ $# -eq 0 -o $# -gt 3 -o $# -lt 3 ]
+then
+	read -p  "Enter rate amount time  " rt a t
+	interest $rt $a $t
+else
+	interest $1 $2 $3
+fi

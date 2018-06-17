@@ -1,0 +1,23 @@
+#!/bin/bash
+
+greatest()
+{
+	max=${1}
+	for i in ${@:1}
+	do
+		if [ $max -lt $i ]
+		then
+			max=$i			
+		fi
+	done
+	echo "greatest $max"
+}
+
+
+if [ $# -eq 0 ]
+then
+	read -p "Enter elements " var
+	greatest ${var[@]}
+else
+	greatest ${@}
+fi

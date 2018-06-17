@@ -1,0 +1,22 @@
+#!/bin/bash
+
+fact()
+{
+	i=1
+	f=1
+	while [ $i -le $1 ]
+	do
+		f=$((f*i))
+		i=$((i+1))
+	done
+	echo "Factorial is $f"
+}
+
+
+if [ $# -eq 0 ]
+then
+	read -p "Enter a number " s
+	fact $s
+else
+	fact $1
+fi

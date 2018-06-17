@@ -1,0 +1,15 @@
+#!/bin/bash
+
+conversion()
+{
+	echo Temperature in ${1}C and $(echo "scale=2;(($1*1.8)+32)" | bc)F 
+}
+
+
+if [ $# -eq 0 ]
+then
+	read -p "Enter temperature in Celsius " s
+	conversion $s
+else
+	conversion $1
+fi

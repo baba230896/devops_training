@@ -1,0 +1,11 @@
+use sudo permission
+
+#for java installation
+1. sudo apt-get install default-jre default-jdk
+
+#for jenkins installation
+2. wget -q  -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add - # to add the package repository
+3. echo "deb http://pkg.jenkins-ci.org/debian binary/" | sudo tee -a /etc/apt/sources.list.d/jenkins.list
+4. sudo apt-get update
+5. sudo apt-get install jenkins
+6. ps -ef | grep jenkins #check the installation of jenkins 
